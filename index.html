@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMUL - Organic Milk Brand</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(90deg, #4CAF50, #68a0b0);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #68a0b0;
+        }
+        section {
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .about, .products, .reviews, .contact {
+            background: linear-gradient(120deg, #4CAF50 30%, #68a0b0);
+            color: white;
+            padding: 30px;
+            margin: 10px auto;
+            border-radius: 8px;
+        }
+        .about h2, .products h2, .reviews h2, .contact h2 {
+            color: white;
+        }
+        .products ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .products ul li {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        .logo-ad {
+            text-align: center;
+            margin-top: 40px;
+        }
+        .logo-ad img {
+            max-width: 300px;
+            height: auto;
+        }
+        .logo-ad p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 500px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form input, .contact-form textarea {
+            padding: 15px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        .contact-form button {
+            padding: 15px;
+            background-color: #68a0b0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: #4CAF50;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            box-shadow: 0 0 5px #4CAF50;
+        }
+    </style>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("60JOJPJNOLWf4Td03"); // Replace with your user ID from EmailJS
+        })();
+        
+        function sendEmail(event) {
+            event.preventDefault(); // Prevent form from reloading the page
+
+            // Collecting form data
+            emailjs.sendForm('service_gob55hh', 'template_g5r5pke', '#contact-form')
+            .then(function(response) {
+                alert("Message sent successfully!");
+            }, function(error) {
+                alert("Failed to send message. Please try again later.");
+            });
+        }
+    </script>
+</head>
+<body>
+
+<header>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="RAMUL.png" alt="RAMUL Logo" style="width: 200px; height: auto; margin-right: 20px;">
+        <div>
+            <h1>RAMUL</h1>
+            <p>RAMUL दूध पीता  है  INDIA</p>
+        </div>
+    </div>
+</header>
+
+<nav>
+    <a href="#about">About Us</a>
+    <a href="#products">Our Products</a>
+    <a href="#reviews">Customer Reviews</a>
+    <a href="#contact">Contact Us</a>
+</nav>
+
+<section id="about" class="about">
+    <h2>About Us</h2>
+    <p>Welcome to RAMUL, a brand committed to providing fresh, organic, and locally sourced milk. Our mission is to ensure that every household enjoys pure and healthy milk straight from the farm to your doorstep. At RAMUL, we take pride in supporting local farmers and delivering the highest quality of milk to nourish your family.</p>
+</section>
+
+<section id="products" class="products">
+    <h2>Our Products</h2>
+    <p>At RAMUL, we offer a wide range of milk products including:</p>
+    <ul>
+        <li>Fresh Organic Cow Milk</li>
+        <li>Organic Ghee</li>
+        <li>Flavored Milk</li>
+        <li>Milk-based Beverages</li>
+    </ul>
+</section>
+
+<section id="reviews" class="reviews">
+    <h2>Customer Reviews</h2>
+    <p>“RAMUL milk is the best I’ve ever tasted! Knowing that <b>it’s organic and locally sourced</b> makes it even better.” – Priya S.</p>
+    <p>“My family loves the <b>quality and freshness of RAMUL products</b>. Highly recommend!” – Rahul D.</p>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any questions or would like to get in touch with us, feel free to fill out the form below:</p>
+    <form id="contact-form" class="contact-form" onsubmit="sendEmail(event)">
+        <input type="text" placeholder="Your Name" name="from_name" required>
+        <input type="email" placeholder="Your Email" name="email" required>
+        <textarea rows="4" placeholder="Your Message" name="message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<section class="logo-ad">
+    <h2>Our Logo and Advertisement</h2>
+    <!-- Add your logo here -->
+    <img src="RAMUL.png" alt="RAMUL Logo">
+    <!-- Add your advertisement text below -->
+    <p>RAMUL - Pure Organic Milk, Sourced Locally!</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 RAMUL Milk Brand | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
